@@ -12,9 +12,17 @@ const CARD_BASE_URL = "https://raw.githubusercontent.com/RoyaleAPI/cr-api-assets
 function getCardImageUrl(cardName) {
     if (!cardName) return null;
     
-    // Use local log.png
+    // Check if we're on an arena page (in subfolder)
+    const isArenaPage = window.location.pathname.includes('/arena/');
+    
+    // Use local log.png with correct path based on page location
     if (cardName === 'log' || cardName === 'log-ev1') {
-        return 'assets/cr/cards/log.png';
+        // If on arena page, go up one level; otherwise use direct path
+        if (isArenaPage) {
+            return '../assets/cr/cards/log.png';
+        } else {
+            return 'assets/cr/cards/log.png';
+        }
     }
     
     let fileName = cardName.toLowerCase();
@@ -173,6 +181,148 @@ function loadArenaDecks(arenaKey) {
     container.appendChild(fragment);
 }
 
+// Add this function before createDeckCard
+function analyzeDeck(deck) {
+    if (!deck.cards || !Array.isArray(deck.cards)) {
+        return {
+            attack: 70, defense: 70, synergy: 70, versatility: 70, f2p: 80,
+            attackLabel: 'Good', defenseLabel: 'Good', synergyLabel: 'Good',
+            versatilityLabel: 'Good', f2pLabel: 'Great!'
+        };
+    }
+    
+    // Card ratings database
+    const CARD_RATINGS = {
+        // Win Conditions
+        'giant': { attack: 85, defense: 70, synergy: 80, versatility: 75, f2p: 90 },
+        'golem': { attack: 95, defense: 85, synergy: 85, versatility: 65, f2p: 75 },
+        'hog-rider': { attack: 90, defense: 60, synergy: 85, versatility: 85, f2p: 95 },
+        'pekka': { attack: 90, defense: 95, synergy: 70, versatility: 70, f2p: 75 },
+        'miner': { attack: 75, defense: 65, synergy: 90, versatility: 90, f2p: 85 },
+        'goblin-barrel': { attack: 80, defense: 40, synergy: 85, versatility: 80, f2p: 90 },
+        'royal-giant': { attack: 85, defense: 75, synergy: 75, versatility: 80, f2p: 85 },
+        'lava-hound': { attack: 85, defense: 70, synergy: 85, versatility: 65, f2p: 70 },
+        'balloon': { attack: 95, defense: 50, synergy: 80, versatility: 70, f2p: 80 },
+        'graveyard': { attack: 85, defense: 55, synergy: 85, versatility: 75, f2p: 80 },
+        'x-bow': { attack: 90, defense: 80, synergy: 75, versatility: 65, f2p: 70 },
+        'mortar': { attack: 85, defense: 75, synergy: 75, versatility: 70, f2p: 85 },
+        'goblin-giant': { attack: 80, defense: 70, synergy: 80, versatility: 75, f2p: 80 },
+        'electro-giant': { attack: 85, defense: 85, synergy: 75, versatility: 70, f2p: 75 },
+        'goblin-drill': { attack: 85, defense: 55, synergy: 85, versatility: 80, f2p: 85 },
+        
+        // Defense
+        'inferno-tower': { attack: 60, defense: 95, synergy: 70, versatility: 65, f2p: 80 },
+        'tesla': { attack: 65, defense: 90, synergy: 75, versatility: 80, f2p: 90 },
+        'cannon': { attack: 55, defense: 85, synergy: 70, versatility: 75, f2p: 95 },
+        
+        // Support
+        'musketeer': { attack: 80, defense: 75, synergy: 85, versatility: 85, f2p: 95 },
+        'witch': { attack: 75, defense: 70, synergy: 85, versatility: 80, f2p: 90 },
+        'baby-dragon': { attack: 70, defense: 70, synergy: 85, versatility: 85, f2p: 90 },
+        'electro-wizard': { attack: 75, defense: 70, synergy: 85, versatility: 85, f2p: 75 },
+        'magic-archer': { attack: 80, defense: 65, synergy: 85, versatility: 85, f2p: 75 },
+        'phoenix': { attack: 80, defense: 65, synergy: 85, versatility: 80, f2p: 70 },
+        'monk': { attack: 75, defense: 85, synergy: 80, versatility: 75, f2p: 65 },
+        
+        // Spells
+        'fireball': { attack: 75, defense: 65, synergy: 85, versatility: 90, f2p: 95 },
+        'poison': { attack: 70, defense: 70, synergy: 85, versatility: 85, f2p: 90 },
+        'lightning': { attack: 80, defense: 70, synergy: 75, versatility: 75, f2p: 85 },
+        'arrows': { attack: 60, defense: 55, synergy: 80, versatility: 85, f2p: 100 },
+        'zap': { attack: 55, defense: 50, synergy: 85, versatility: 90, f2p: 100 },
+        'log': { attack: 55, defense: 55, synergy: 85, versatility: 90, f2p: 85 },
+        'tornado': { attack: 55, defense: 80, synergy: 90, versatility: 85, f2p: 85 },
+        
+        // Cheap Cycle
+        'skeletons': { attack: 45, defense: 50, synergy: 85, versatility: 85, f2p: 100 },
+        'ice-spirit': { attack: 45, defense: 55, synergy: 90, versatility: 90, f2p: 100 },
+        'goblins': { attack: 60, defense: 45, synergy: 80, versatility: 80, f2p: 100 },
+        'spear-goblins': { attack: 55, defense: 45, synergy: 80, versatility: 85, f2p: 100 },
+        'archers': { attack: 65, defense: 55, synergy: 80, versatility: 85, f2p: 100 },
+        'minions': { attack: 70, defense: 50, synergy: 80, versatility: 80, f2p: 95 },
+        'mega-minion': { attack: 70, defense: 65, synergy: 80, versatility: 80, f2p: 90 },
+        'goblin-gang': { attack: 65, defense: 50, synergy: 80, versatility: 80, f2p: 95 },
+        
+        // Tanks
+        'knight': { attack: 65, defense: 80, synergy: 75, versatility: 85, f2p: 100 },
+        'valkyrie': { attack: 70, defense: 80, synergy: 75, versatility: 85, f2p: 95 },
+        'dark-prince': { attack: 75, defense: 75, synergy: 80, versatility: 80, f2p: 85 },
+        'prince': { attack: 85, defense: 70, synergy: 75, versatility: 75, f2p: 85 },
+        'mini-pekka': { attack: 85, defense: 65, synergy: 70, versatility: 75, f2p: 95 },
+        'ice-golem': { attack: 50, defense: 75, synergy: 85, versatility: 80, f2p: 95 },
+        
+        // Legendary/Champions
+        'mega-knight': { attack: 85, defense: 85, synergy: 75, versatility: 80, f2p: 60 },
+        'bandit': { attack: 80, defense: 60, synergy: 85, versatility: 85, f2p: 70 },
+        'lumberjack': { attack: 80, defense: 65, synergy: 85, versatility: 80, f2p: 70 },
+        'inferno-dragon': { attack: 75, defense: 80, synergy: 75, versatility: 70, f2p: 65 },
+        'sparky': { attack: 90, defense: 70, synergy: 70, versatility: 60, f2p: 65 },
+        'royal-ghost': { attack: 70, defense: 70, synergy: 80, versatility: 80, f2p: 70 },
+        'mother-witch': { attack: 70, defense: 65, synergy: 85, versatility: 75, f2p: 65 },
+        'archer-queen': { attack: 85, defense: 70, synergy: 85, versatility: 85, f2p: 55 },
+        'golden-knight': { attack: 80, defense: 70, synergy: 80, versatility: 80, f2p: 55 },
+        'mighty-miner': { attack: 75, defense: 80, synergy: 80, versatility: 75, f2p: 55 },
+        'little-prince': { attack: 80, defense: 65, synergy: 85, versatility: 80, f2p: 55 }
+    };
+    
+    const DEFAULT_RATING = { attack: 65, defense: 65, synergy: 75, versatility: 75, f2p: 80 };
+    
+    let attackSum = 0, defenseSum = 0, synergySum = 0, versatilitySum = 0, f2pSum = 0;
+    let cardCount = 0;
+    
+    deck.cards.forEach(cardName => {
+        if (!cardName) return;
+        const cleanName = cardName.toLowerCase().replace('-ev1', '');
+        const rating = CARD_RATINGS[cleanName] || DEFAULT_RATING;
+        
+        attackSum += rating.attack;
+        defenseSum += rating.defense;
+        synergySum += rating.synergy;
+        versatilitySum += rating.versatility;
+        f2pSum += rating.f2p;
+        cardCount++;
+    });
+    
+    if (cardCount === 0) {
+        return {
+            attack: 70, defense: 70, synergy: 70, versatility: 70, f2p: 80,
+            attackLabel: 'Good', defenseLabel: 'Good', synergyLabel: 'Good',
+            versatilityLabel: 'Good', f2pLabel: 'Great!'
+        };
+    }
+    
+    const getLabel = (score) => {
+        if (score >= 90) return 'Godly!';
+        if (score >= 80) return 'Great!';
+        if (score >= 70) return 'Good';
+        if (score >= 50) return 'Mediocre';
+        return 'Poor';
+    };
+    
+    const attack = Math.round(attackSum / cardCount);
+    const defense = Math.round(defenseSum / cardCount);
+    const synergy = Math.round(synergySum / cardCount);
+    const versatility = Math.round(versatilitySum / cardCount);
+    const f2p = Math.round(f2pSum / cardCount);
+    
+    return {
+        attack, defense, synergy, versatility, f2p,
+        attackLabel: getLabel(attack),
+        defenseLabel: getLabel(defense),
+        synergyLabel: getLabel(synergy),
+        versatilityLabel: getLabel(versatility),
+        f2pLabel: getLabel(f2p)
+    };
+}
+
+function getRatingColor(score) {
+    if (score >= 90) return '#ffd700';
+    if (score >= 80) return '#4caf50';
+    if (score >= 70) return '#2196f3';
+    if (score >= 50) return '#ff9800';
+    return '#f44336';
+}
+
 function createDeckCard(deck, rank) {
     const card = document.createElement('div');
     card.className = 'trending-card';
@@ -238,6 +388,68 @@ function createDeckCard(deck, rank) {
         });
     }
     
+    // Calculate deck stats
+    const stats = analyzeDeck(deck);
+    
+    // Create stats panel
+    const statsPanel = document.createElement('div');
+    statsPanel.className = 'stats-panel-integrated';
+    statsPanel.innerHTML = `
+        <div class="stats-header">
+            <span class="stats-icon">📊</span>
+            <span class="stats-title">Deck Performance</span>
+            <span class="stats-badge">AI Analyzed</span>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>⚔️ Attack</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.attack)}">${stats.attackLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.attack}%; background: ${getRatingColor(stats.attack)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>🛡️ Defense</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.defense)}">${stats.defenseLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.defense}%; background: ${getRatingColor(stats.defense)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>🔗 Synergy</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.synergy)}">${stats.synergyLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.synergy}%; background: ${getRatingColor(stats.synergy)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>🎯 Versatility</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.versatility)}">${stats.versatilityLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.versatility}%; background: ${getRatingColor(stats.versatility)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>💰 F2P Score</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.f2p)}">${stats.f2pLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.f2p}%; background: ${getRatingColor(stats.f2p)}"></div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Create footer with button
     const footer = document.createElement('div');
     footer.className = 'trending-footer';
     
@@ -251,14 +463,15 @@ function createDeckCard(deck, rank) {
     
     footer.appendChild(tryBtn);
     
+    // Assemble card in correct order
     card.appendChild(rankBadge);
     card.appendChild(header);
     card.appendChild(cardsGrid);
+    card.appendChild(statsPanel);  // Stats panel BEFORE footer
     card.appendChild(footer);
     
     return card;
 }
-
 function initializeHomepage() {
     const gridContainer = document.getElementById('arena-grid');
     if (!gridContainer) return;
@@ -436,6 +649,68 @@ function createTrendingCard(deck, rank) {
         });
     }
     
+    // Calculate deck stats
+    const stats = analyzeDeck(deck);
+    
+    // Create stats panel
+    const statsPanel = document.createElement('div');
+    statsPanel.className = 'stats-panel-integrated';
+    statsPanel.innerHTML = `
+        <div class="stats-header">
+            <span class="stats-icon">📊</span>
+            <span class="stats-title">Deck Performance</span>
+            <span class="stats-badge">AI Analyzed</span>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>⚔️ Attack</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.attack)}">${stats.attackLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.attack}%; background: ${getRatingColor(stats.attack)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>🛡️ Defense</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.defense)}">${stats.defenseLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.defense}%; background: ${getRatingColor(stats.defense)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>🔗 Synergy</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.synergy)}">${stats.synergyLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.synergy}%; background: ${getRatingColor(stats.synergy)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>🎯 Versatility</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.versatility)}">${stats.versatilityLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.versatility}%; background: ${getRatingColor(stats.versatility)}"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">
+                    <span>💰 F2P Score</span>
+                    <span class="stat-value" style="color: ${getRatingColor(stats.f2p)}">${stats.f2pLabel}</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${stats.f2p}%; background: ${getRatingColor(stats.f2p)}"></div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Create footer
     const footer = document.createElement('div');
     footer.className = 'trending-footer';
     
@@ -449,14 +724,15 @@ function createTrendingCard(deck, rank) {
     
     footer.appendChild(tryBtn);
     
+    // Assemble in correct order
     card.appendChild(rankBadge);
     card.appendChild(header);
     card.appendChild(cardsGrid);
+    card.appendChild(statsPanel);
     card.appendChild(footer);
     
     return card;
 }
-
 function setupSearch() {
     const searchInput = document.getElementById('search-input');
     const searchClear = document.getElementById('search-clear');
