@@ -6,7 +6,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://clashvault.com/</loc>
+        <loc>https://clashvault-official.github.io</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -14,85 +14,85 @@
 
     <!-- Arena Pages -->
     <url>
-        <loc>https://clashvault.com/arena/arena1.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena1.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena2.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena2.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena3.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena3.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena4.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena4.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena5.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena5.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena6.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena6.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena7.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena7.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena8.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena8.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena9.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena9.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena10.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena10.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena11.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena11.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena12.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena12.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena13.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena13.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/arena/arena14.html</loc>
+        <loc>https://clashvault-official.github.ioarena/arena14.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -100,19 +100,19 @@
 
     <!-- Legal Pages -->
     <url>
-        <loc>https://clashvault.com/about.html</loc>
+        <loc>https://clashvault-official.github.ioabout.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/privacy.html</loc>
+        <loc>https://clashvault-official.github.ioprivacy.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://clashvault.com/terms.html</loc>
+        <loc>https://clashvault-official.github.ioterms.html</loc>
         <lastmod>2026-06-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
