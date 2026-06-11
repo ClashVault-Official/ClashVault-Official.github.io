@@ -692,6 +692,86 @@ window.crDecks = {
   // ============================================
   arena10: [
     {
+      id: "a10_deck_15",
+      deckName: "Balloon Freeze Control",
+      avgElixir: "4.0",
+      cards: [
+          "balloon",
+          "freeze",
+          "baby-dragon",
+          "tornado",
+          "mega-minion",
+          "tombstone",
+          "arrows",
+          "ice-spirit"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000006;28000005;26000015;28000004;26000039;27000009;28000001;26000030"
+    },
+    {
+      id: "a10_deck_14",
+      deckName: "Giant Double Wizard Push",
+      avgElixir: "4.3",
+      cards: [
+          "giant",
+          "wizard",
+          "electro-wizard",
+          "mini-pekka",
+          "musketeer",
+          "fireball",
+          "zap",
+          "minions"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000003;26000041;26000042;26000018;26000014;28000000;28000008;26000005"
+    },
+    {
+      id: "a10_deck_13",
+      deckName: "Mega Knight Bridge Spam",
+      avgElixir: "3.9",
+      cards: [
+          "mega-knight",
+          "bandit",
+          "battle-ram",
+          "electro-wizard",
+          "royal-ghost",
+          "poison",
+          "zap",
+          "bats"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000058;26000046;26000036;26000042;26000050;28000009;28000008;26000025"
+    },
+    {
+      id: "a10_deck_12",
+      deckName: "Miner Wall Breakers Cycle",
+      avgElixir: "3.0",
+      cards: [
+          "miner",
+          "wall-breakers",
+          "bomb-tower",
+          "magic-archer",
+          "poison",
+          "skeletons",
+          "ice-spirit",
+          "the-log"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000032;26000084;27000003;26000045;28000009;26000010;26000030;28000011"
+    },
+    {
+      id: "a10_deck_11",
+      deckName: "Hog EQ Firecracker Cycle",
+      avgElixir: "2.8",
+      cards: [
+          "hog-rider",
+          "earthquake",
+          "firecracker",
+          "knight",
+          "cannon",
+          "skeletons",
+          "ice-spirit",
+          "the-log"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000021;28000007;26000065;26000000;27000000;26000010;26000030;28000011"
+    },
+    {
       id: "a10_deck_1",
       deckName: "Mother Witch Beatdown",
       avgElixir: "3.7",
@@ -767,6 +847,86 @@ window.crDecks = {
   // ARENA 11 - Electro Valley (Adds: Electro Giant, Electro Wizard, Goblin Drill, Heal Spirit)
   // ============================================
   arena11: [
+    {
+      id: "a11_deck_15",
+      deckName: "PEKKA Bridge Spam",
+      avgElixir: "4.2",
+      cards: [
+          "pekka",
+          "bandit",
+          "battle-ram",
+          "electro-wizard",
+          "royal-ghost",
+          "poison",
+          "zap",
+          "magic-archer"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000004;26000046;26000036;26000042;26000050;28000009;28000008;26000045"
+    },
+    {
+      id: "a11_deck_14",
+      deckName: "Miner Control Poison",
+      avgElixir: "3.0",
+      cards: [
+          "miner",
+          "poison",
+          "knight",
+          "archers",
+          "cannon",
+          "skeletons",
+          "ice-spirit",
+          "the-log"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000032;28000009;26000000;26000019;27000000;26000010;26000030;28000011"
+    },
+    {
+      id: "a11_deck_13",
+      deckName: "Lava Balloon Push",
+      avgElixir: "4.1",
+      cards: [
+          "lava-hound",
+          "balloon",
+          "minions",
+          "baby-dragon",
+          "mega-minion",
+          "tombstone",
+          "fireball",
+          "arrows"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000029;26000006;26000005;26000015;26000039;27000009;28000000;28000001"
+    },
+    {
+      id: "a11_deck_12",
+      deckName: "Electro Giant Control",
+      avgElixir: "4.5",
+      cards: [
+          "electro-giant",
+          "tornado",
+          "lightning",
+          "fisherman",
+          "mother-witch",
+          "phoenix",
+          "barbarian-barrel",
+          "zappies"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000084;28000004;28000006;26000085;26000071;26000087;26000049;26000076"
+    },
+    {
+      id: "a11_deck_11",
+      deckName: "Royal Giant Fisherman",
+      avgElixir: "3.7",
+      cards: [
+          "royal-giant",
+          "fisherman",
+          "hunter",
+          "lightning",
+          "the-log",
+          "skeletons",
+          "ice-spirit",
+          "mother-witch"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000024;26000085;26000059;28000006;28000011;26000010;26000030;26000071"
+    },
     {
       id: "a11_deck_1",
       deckName: "Pekka Bridge Spam",
@@ -844,6 +1004,86 @@ window.crDecks = {
   // ============================================
   arena12: [
     {
+      id: "a12_deck_15",
+      deckName: "Lava Balloon Beatdown",
+      avgElixir: "4.3",
+      cards: [
+          "lava-hound",
+          "balloon",
+          "baby-dragon",
+          "mega-minion",
+          "minions",
+          "tombstone",
+          "fireball",
+          "arrows"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000029;26000006;26000015;26000039;26000005;27000009;28000000;28000001"
+    },
+    {
+      id: "a12_deck_14",
+      deckName: "Electro Giant Control",
+      avgElixir: "4.5",
+      cards: [
+          "electro-giant",
+          "fisherman",
+          "lightning",
+          "tornado",
+          "mother-witch",
+          "phoenix",
+          "zappies",
+          "barbarian-barrel"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000084;26000085;28000006;28000004;26000071;26000087;26000076;26000049"
+    },
+    {
+      id: "a12_deck_13",
+      deckName: "Miner Poison Cycle",
+      avgElixir: "3.0",
+      cards: [
+          "miner",
+          "poison",
+          "knight",
+          "archers",
+          "cannon",
+          "skeletons",
+          "ice-spirit",
+          "the-log"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000032;28000009;26000000;26000019;27000000;26000010;26000030;28000011"
+    },
+    {
+      id: "a12_deck_12",
+      deckName: "Mega Knight Ram Rider",
+      avgElixir: "4.1",
+      cards: [
+          "mega-knight",
+          "ram-rider",
+          "bandit",
+          "electro-wizard",
+          "poison",
+          "zap",
+          "bats",
+          "battle-ram"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000058;26000064;26000046;26000042;28000009;28000008;26000025;26000036"
+    },
+    {
+      id: "a12_deck_11",
+      deckName: "Graveyard Poison Control",
+      avgElixir: "3.5",
+      cards: [
+          "graveyard",
+          "poison",
+          "knight",
+          "ice-wizard",
+          "tornado",
+          "baby-dragon",
+          "barbarian-barrel",
+          "tombstone"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000031;28000009;26000000;26000059;28000004;26000015;26000049;27000009"
+    },
+    {
       id: "a12_deck_1",
       deckName: "Miner Wall Breakers",
       avgElixir: "3.0",
@@ -920,6 +1160,86 @@ window.crDecks = {
   // ============================================
   arena13: [
     {
+      id: "a13_deck_15",
+      deckName: "Lava Miner Control",
+      avgElixir: "3.9",
+      cards: [
+          "lava-hound",
+          "miner",
+          "balloon",
+          "mega-minion",
+          "tombstone",
+          "fireball",
+          "arrows",
+          "baby-dragon"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000029;26000032;26000006;26000039;27000009;28000000;28000001;26000015"
+    },
+    {
+      id: "a13_deck_14",
+      deckName: "Graveyard Freeze Control",
+      avgElixir: "3.6",
+      cards: [
+          "graveyard",
+          "freeze",
+          "baby-dragon",
+          "tornado",
+          "ice-wizard",
+          "knight",
+          "tombstone",
+          "barbarian-barrel"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000031;28000005;26000015;28000004;26000059;26000000;27000009;26000049"
+    },
+    {
+      id: "a13_deck_13",
+      deckName: "P.E.K.K.A Bridge Spam",
+      avgElixir: "4.2",
+      cards: [
+          "pekka",
+          "bandit",
+          "battle-ram",
+          "electro-wizard",
+          "royal-ghost",
+          "poison",
+          "zap",
+          "magic-archer"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000004;26000046;26000036;26000042;26000050;28000009;28000008;26000045"
+    },
+    {
+      id: "a13_deck_12",
+      deckName: "Royal Hogs EQ Cycle",
+      avgElixir: "3.0",
+      cards: [
+          "royal-hogs",
+          "earthquake",
+          "firecracker",
+          "cannon",
+          "knight",
+          "skeletons",
+          "ice-spirit",
+          "the-log"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000078;28000007;26000065;27000000;26000000;26000010;26000030;28000011"
+    },
+    {
+      id: "a13_deck_11",
+      deckName: "Log Bait Classic",
+      avgElixir: "3.3",
+      cards: [
+          "princess",
+          "goblin-gang",
+          "rocket",
+          "inferno-tower",
+          "knight",
+          "the-log",
+          "ice-spirit",
+          "goblin-barrel"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000026;26000012;28000006;27000003;26000000;28000011;26000030;26000028"
+    },
+    {
       id: "a13_deck_1",
       deckName: "E-Giant Tornado",
       avgElixir: "4.1",
@@ -995,6 +1315,86 @@ window.crDecks = {
   // ARENA 14 - Serenity Peak (All cards unlocked - Full Meta Decks)
   // ============================================
   arena14: [
+    {
+      id: "a14_deck_15",
+      deckName: "PEKKA Electro Wizard Control",
+      avgElixir: "4.1",
+      cards: [
+          "pekka",
+          "electro-wizard",
+          "bandit",
+          "battle-ram",
+          "poison",
+          "zap",
+          "royal-ghost",
+          "magic-archer"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000004;26000042;26000046;26000036;28000009;28000008;26000050;26000045"
+    },
+    {
+      id: "a14_deck_14",
+      deckName: "Lava Loon Phoenix",
+      avgElixir: "4.3",
+      cards: [
+          "lava-hound",
+          "balloon",
+          "phoenix",
+          "baby-dragon",
+          "mega-minion",
+          "tombstone",
+          "fireball",
+          "arrows"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000029;26000006;26000087;26000015;26000039;27000009;28000000;28000001"
+    },
+    {
+      id: "a14_deck_13",
+      deckName: "Royal Giant Lightning",
+      avgElixir: "3.9",
+      cards: [
+          "royal-giant",
+          "fisherman",
+          "lightning",
+          "hunter",
+          "mother-witch",
+          "log",
+          "skeletons",
+          "ice-spirit"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000024;26000085;28000006;26000059;26000071;28000011;26000010;26000030"
+    },
+    {
+      id: "a14_deck_12",
+      deckName: "Mighty Miner Control",
+      avgElixir: "3.4",
+      cards: [
+          "mighty-miner",
+          "bomb-tower",
+          "poison",
+          "log",
+          "archers",
+          "ice-spirit",
+          "skeletons",
+          "knight"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000086;27000003;28000009;28000011;26000019;26000030;26000010;26000000"
+    },
+    {
+      id: "a14_deck_11",
+      deckName: "Monk Control Cycle",
+      avgElixir: "3.8",
+      cards: [
+          "monk",
+          "phoenix",
+          "lightning",
+          "tornado",
+          "fisherman",
+          "archers",
+          "barbarian-barrel",
+          "ice-spirit"
+      ],
+      copyLink: "https://link.clashroyale.com/deck/en?deck=26000088;26000087;28000006;28000004;26000085;26000019;26000049;26000030"
+    },
     {
       id: "a14_deck_1",
       deckName: "Archer Queen Cycle",

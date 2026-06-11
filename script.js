@@ -209,6 +209,10 @@ function analyzeDeck(deck) {
         'goblin-giant': { attack: 80, defense: 70, synergy: 80, versatility: 75, f2p: 80 },
         'electro-giant': { attack: 85, defense: 85, synergy: 75, versatility: 70, f2p: 75 },
         'goblin-drill': { attack: 85, defense: 55, synergy: 85, versatility: 80, f2p: 85 },
+        'ram-rider': { attack: 85, defense: 70, synergy: 80, versatility: 80, f2p: 70 },
+        'elixir-golem': { attack: 85, defense: 65, synergy: 85, versatility: 60, f2p: 80 },
+        'battle-ram': { attack: 80, defense: 60, synergy: 80, versatility: 75, f2p: 85 },
+        'wall-breakers': { attack: 85, defense: 35, synergy: 90, versatility: 80, f2p: 90 },
         
         // Defense
         'inferno-tower': { attack: 60, defense: 95, synergy: 70, versatility: 65, f2p: 80 },
@@ -223,6 +227,16 @@ function analyzeDeck(deck) {
         'magic-archer': { attack: 80, defense: 65, synergy: 85, versatility: 85, f2p: 75 },
         'phoenix': { attack: 80, defense: 65, synergy: 85, versatility: 80, f2p: 70 },
         'monk': { attack: 75, defense: 85, synergy: 80, versatility: 75, f2p: 65 },
+        'ice-wizard': { attack: 60, defense: 75, synergy: 90, versatility: 85, f2p: 70 },
+        'executioner': { attack: 75, defense: 75, synergy: 85, versatility: 80, f2p: 80 },
+        'bowler': { attack: 70, defense: 85, synergy: 80, versatility: 70, f2p: 80 },
+        'hunter': { attack: 85, defense: 65, synergy: 75, versatility: 75, f2p: 85 },
+        'dart-goblin': { attack: 75, defense: 40, synergy: 80, versatility: 80, f2p: 85 },
+        'fisherman': { attack: 60, defense: 85, synergy: 90, versatility: 80, f2p: 75 },
+        'cannon-cart': { attack: 80, defense: 80, synergy: 75, versatility: 75, f2p: 75 },
+        'electro-dragon': { attack: 75, defense: 75, synergy: 85, versatility: 75, f2p: 75 },
+        'battle-healer': { attack: 65, defense: 80, synergy: 90, versatility: 65, f2p: 75 },
+        'skeleton-dragons': { attack: 70, defense: 55, synergy: 80, versatility: 75, f2p: 85 },
         
         // Spells
         'fireball': { attack: 75, defense: 65, synergy: 85, versatility: 90, f2p: 95 },
@@ -232,6 +246,14 @@ function analyzeDeck(deck) {
         'zap': { attack: 55, defense: 50, synergy: 85, versatility: 90, f2p: 100 },
         'log': { attack: 55, defense: 55, synergy: 85, versatility: 90, f2p: 85 },
         'tornado': { attack: 55, defense: 80, synergy: 90, versatility: 85, f2p: 85 },
+        'rocket': { attack: 90, defense: 60, synergy: 70, versatility: 65, f2p: 80 },
+        'freeze': { attack: 65, defense: 55, synergy: 95, versatility: 65, f2p: 80 },
+        'rage': { attack: 55, defense: 30, synergy: 90, versatility: 60, f2p: 95 },
+        'earthquake': { attack: 75, defense: 50, synergy: 85, versatility: 70, f2p: 95 },
+        'barbarian-barrel': { attack: 60, defense: 60, synergy: 85, versatility: 90, f2p: 90 },
+        'royal-delivery': { attack: 65, defense: 80, synergy: 80, versatility: 75, f2p: 90 },
+        'clone': { attack: 40, defense: 20, synergy: 95, versatility: 30, f2p: 85 },
+        'mirror': { attack: 50, defense: 50, synergy: 85, versatility: 90, f2p: 80 },
         
         // Cheap Cycle
         'skeletons': { attack: 45, defense: 50, synergy: 85, versatility: 85, f2p: 100 },
@@ -262,8 +284,29 @@ function analyzeDeck(deck) {
         'archer-queen': { attack: 85, defense: 70, synergy: 85, versatility: 85, f2p: 55 },
         'golden-knight': { attack: 80, defense: 70, synergy: 80, versatility: 80, f2p: 55 },
         'mighty-miner': { attack: 75, defense: 80, synergy: 80, versatility: 75, f2p: 55 },
-        'little-prince': { attack: 80, defense: 65, synergy: 85, versatility: 80, f2p: 55 }
-    };
+        'little-prince': { attack: 80, defense: 65, synergy: 85, versatility: 80, f2p: 55 },
+        'skeleton-king': { attack: 75, defense: 85, synergy: 85, versatility: 75, f2p: 55 },
+
+        'bats': { attack: 65, defense: 45, synergy: 80, versatility: 85, f2p: 100 },
+        'firecracker': { attack: 75, defense: 45, synergy: 85, versatility: 85, f2p: 95 },
+        'bomber': { attack: 70, defense: 50, synergy: 80, versatility: 80, f2p: 100 },
+        'barbarians': { attack: 75, defense: 85, synergy: 70, versatility: 65, f2p: 95 },
+        'elite-barbarians': { attack: 90, defense: 70, synergy: 65, versatility: 65, f2p: 85 },
+        'giant-skeleton': { attack: 85, defense: 90, synergy: 75, versatility: 70, f2p: 80 },
+        'three-musketeers': { attack: 95, defense: 70, synergy: 80, versatility: 60, f2p: 70 },
+        'royal-recruits': { attack: 75, defense: 90, synergy: 75, versatility: 70, f2p: 85 },
+        'royal-hogs': { attack: 85, defense: 50, synergy: 80, versatility: 75, f2p: 85 },
+        'skeleton-barrel': { attack: 75, defense: 40, synergy: 80, versatility: 75, f2p: 85 },
+
+        'bomb-tower': { attack: 65, defense: 90, synergy: 75, versatility: 75, f2p: 90 },
+        'goblin-cage': { attack: 65, defense: 85, synergy: 80, versatility: 80, f2p: 90 },
+        'elixir-pump': { attack: 40, defense: 40, synergy: 85, versatility: 60, f2p: 75 },
+        'goblin-demolisher': { attack: 80, defense: 65, synergy: 80, versatility: 75, f2p: 70 },
+        'goblin-stein': { attack: 85, defense: 80, synergy: 85, versatility: 80, f2p: 65 },
+        'void': { attack: 75, defense: 55, synergy: 85, versatility: 75, f2p: 75 },
+        'tower-princess': { attack: 80, defense: 60, synergy: 80, versatility: 80, f2p: 70 },
+        'furnace': { attack: 65, defense: 75, synergy: 80, versatility: 75, f2p: 90 }
+     };
     
     const DEFAULT_RATING = { attack: 65, defense: 65, synergy: 75, versatility: 75, f2p: 80 };
     
@@ -272,8 +315,27 @@ function analyzeDeck(deck) {
     
     deck.cards.forEach(cardName => {
         if (!cardName) return;
-        const cleanName = cardName.toLowerCase().replace('-ev1', '');
-        const rating = CARD_RATINGS[cleanName] || DEFAULT_RATING;
+        const cleanName = cardName.toLowerCase()
+    .replace('-hero-ev1', '')
+    .replace('-hero', '')
+    .replace('-ev1', '');
+
+    if (!CARD_RATINGS[cleanName]) {
+        console.log('Missing rating:', cleanName);
+    }
+
+let rating = CARD_RATINGS[cleanName] || DEFAULT_RATING;
+
+// Small Evolution bonus
+if (cardName.toLowerCase().includes('-ev1')) {
+    rating = {
+        attack: Math.min(100, rating.attack + 5),
+        defense: Math.min(100, rating.defense + 5),
+        synergy: Math.min(100, rating.synergy + 3),
+        versatility: Math.min(100, rating.versatility + 3),
+        f2p: rating.f2p
+    };
+}
         
         attackSum += rating.attack;
         defenseSum += rating.defense;
@@ -472,6 +534,7 @@ function createDeckCard(deck, rank) {
     
     return card;
 }
+
 function initializeHomepage() {
     const gridContainer = document.getElementById('arena-grid');
     if (!gridContainer) return;
