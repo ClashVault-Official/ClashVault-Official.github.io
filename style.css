@@ -127,13 +127,6 @@ body {
 .logo-icon-img {
     width: 28px;
     height: 28px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: var(--transition-smooth);
-}
-
-.logo-placeholder:hover .logo-icon-img {
-    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255, 215, 0, 0.5));
 }
 
 .logo-text-wrapper {
