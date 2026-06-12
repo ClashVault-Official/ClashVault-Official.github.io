@@ -12,7 +12,7 @@ Disallow: /private/
 Disallow: /admin/
 
 # Sitemap location
-Sitemap: https://clashvault-official.github.iositemap.xml
+Sitemap: https://clashvaultweb.github.iositemap.xml
 
 # Crawl delay (be nice to the server)
 Crawl-delay: 1
